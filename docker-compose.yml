@@ -1,0 +1,106 @@
+version: '3.5'
+services:
+
+  # The Application
+  rabbitmq-app:
+    container_name:  rabbitmq-app
+    image:  rabbitmq-app
+    networks:
+      -  rabbitmq-app
+    build:
+      context: ./
+      dockerfile: docker/application/Dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - 9004:9000
+    depends_on:
+      -  rabbitmq-db
+    environment:
+      - "APP_NAME=rabbitmq"
+      - "DB_HOST=rabbitmq-db"
+      - "DB_USERNAME=homestead"
+      - "DB_PASSWORD=secret"
+      - "DB_DATABASE=homestead"
+      - "KAFKA_BROKERS=kafka"
+      - "APP_URL=http://localhost:8080"
+      - "CACHE_DRIVER=file"
+      - "SESSION_DRIVER=file"
+
+  # The Web Server
+  rabbitmq-web:
+    container_name:  rabbitmq-web
+    image:  rabbitmq-web
+    networks:
+      -  rabbitmq-app
+    build:
+      context: ./
+      dockerfile: docker/web/Dockerfile
+    working_dir: /var/www
+    depends_on:
+      -  rabbitmq-app
+    volumes:
+      - ./public:/var/www/public
+    ports:
+      - 8080:80
+
+  # The Database
+  rabbitmq-db:
+    container_name: rabbitmq-db
+    networks:
+      -  rabbitmq-app
+    image: mysql:5.7
+    volumes:
+      -  rabbitmq-db:/var/lib/mysql
+    environment:
+      - "MYSQL_ROOT_PASSWORD=secret"
+      - "MYSQL_USER=homestead"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_DATABASE=homestead"
+    ports:
+      - 33061:3306
+
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: rabbitmq-db
+      PMA_PORTS: 3306
+      PMA_USER: homestead
+      PMA_PASSWORD: secret
+    networks:
+      - rabbitmq-app
+    depends_on:
+      - rabbitmq-db
+    ports:
+      - "8081:80"
+
+  rabbitmq:
+    container_name: rabbitmq-server
+    image: rabbitmq:3-management
+    networks:
+      - rabbitmq-app
+    volumes:
+      - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json
+      - ./rabbitmq/etc/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+      - ./rabbitmq/logs:/var/log/rabbitmq/log
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  composer:
+    image: composer:1.7.2
+    command: install --ignore-platform-reqs --no-scripts
+    volumes:
+      - $PWD:/app
+
+volumes:
+  rabbitmq-db:
+
+networks:
+  rabbitmq-app:
+    name:  rabbitmq-app
