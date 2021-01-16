@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="239af9b7-5ba0-49fe-b94f-bb36f7467910" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/rabbitmq/etc/rabbitmq.conf/rabbitmq.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/obinna/app" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/obinna/app" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +90,7 @@
       <workItem from="1543236197631" duration="12000" />
       <workItem from="1543236211337" duration="12806000" />
       <workItem from="1543405021490" duration="13271000" />
-      <workItem from="1610740278039" duration="10220000" />
+      <workItem from="1610740278039" duration="11957000" />
     </task>
     <servers />
   </component>
