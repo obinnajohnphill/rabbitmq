@@ -4,22 +4,20 @@
 
 2. Rename .env.example to .env
 
-3. Add database credentials and rabbitMQ server login details to .env
+3. RUN `docker-compose build`
 
-4. Install RabbitMQ Server and set user https://www.rabbitmq.com/download.html
-
-5. Install php memchached
-
-
+3. RUN `docker-compose up`
 
 **Create a table**
 
+`
 CREATE TABLE videos(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 video_id VARCHAR(30) NOT NULL,
 title VARCHAR(500) NOT NULL,
 created_date TIMESTAMP
-)
+);
+`
 
 
 **Expectation**
