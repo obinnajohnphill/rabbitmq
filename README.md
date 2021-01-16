@@ -1,10 +1,8 @@
 **Installation**
 
-1. Clone project: https://github.com/obinnajohnphill/YoutubeVideo_Non_Laravel.git
+1. Rename .env.example to .env
 
-2. Rename .env.example to .env
-
-3. RUN `docker-compose build`
+2. RUN `docker-compose build`
 
 3. RUN `docker-compose up`
 
