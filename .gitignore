@@ -1,6 +1,8 @@
 # ignore all logs
 *.log
-
-
 # ignore all env
 *.env
+
+# ignore vendor directory
+vendor
+

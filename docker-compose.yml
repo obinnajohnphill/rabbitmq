@@ -82,16 +82,15 @@ services:
     container_name: rabbitmq-server
     image: rabbitmq:3-management
     restart: always
-    networks:
-      - rabbitmq-app
     volumes:
       - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json
       - ./rabbitmq/etc/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
-      - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/obinna@127.0.0.1
+      - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/rabbt@localhost
       - ./rabbitmq/logs:/var/log/rabbitmq/log
     ports:
-      - 5672:5672
       - 15672:15672
+    networks:
+      - rabbitmq-app
 
   composer:
     image: composer:1.7.2

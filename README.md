@@ -6,6 +6,11 @@
 
 3. RUN `docker-compose up`
 
+
+main application - http://localhost:8080
+phpMyAdmin - http://localhost:8081
+rabbitmqUI - http://localhost:15672
+
 **Create a table**
 
 `
@@ -39,10 +44,4 @@ created_date TIMESTAMP
 9. If same record is querried within 1 hr, the cached version is returned and cache expires after one hour 
 
 
-**View Data Stored in Cache**
 
-2. ssh into your server 
-
-1. Run: telnet localhost 11211 
-
-3. Run: get select (to view data stored in cache with "select key")

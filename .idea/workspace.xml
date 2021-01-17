@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="239af9b7-5ba0-49fe-b94f-bb36f7467910" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/show_videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/show_videos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbitmq/etc/definitions.json/definitions.json" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/etc/definitions.json/definitions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rabbitmq/etc/rabbitmq.conf/rabbitmq.conf" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/etc/rabbitmq.conf/rabbitmq.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/obinna/app" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/obinna/app" afterDir="false" />
     </list>
@@ -12,7 +14,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable path="composer" />
@@ -85,6 +87,7 @@
       <workItem from="1543236211337" duration="12806000" />
       <workItem from="1543405021490" duration="13271000" />
       <workItem from="1610740278039" duration="11957000" />
+      <workItem from="1610829556012" duration="2813000" />
     </task>
     <servers />
   </component>
